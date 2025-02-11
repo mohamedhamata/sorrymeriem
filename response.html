@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Response</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+        }
+        h1 {
+            color: #ff3b5c;
+            font-size: 28px;
+        }
+        .buttons {
+            margin-top: 20px;
+            position: relative;
+        }
+        .button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+            margin: 10px;
+        }
+        .yes-button {
+            background: #4CAF50;
+            color: white;
+        }
+        .yes-button:hover {
+            background: #45a049;
+        }
+        .no-button {
+            background: #ff4b5c;
+            color: white;
+            position: absolute;
+        }
+        .no-button:hover {
+            background: #d84352;
+        }
+        @keyframes loveAnimation {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+        .love-message {
+            display: none;
+            font-size: 24px;
+            color: #ff4081;
+            animation: loveAnimation 1s infinite;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function showLoveMessage() {
+            document.querySelector(".love-message").style.display = "block";
+        }
+
+        function moveNoButton() {
+            let button = document.querySelector(".no-button");
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Do you forgive me?😔</h1>
+        <div class="buttons">
+            <button class="button yes-button" onclick="showLoveMessage()">Yes</button>
+            <button class="button no-button" onclick="moveNoButton()">No</button>
+        </div>
+        <p class="love-message"> I love you so much!😔😔</p>
+    </div>
+</body>
+</html>
